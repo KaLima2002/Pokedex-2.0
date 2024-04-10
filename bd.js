@@ -124,6 +124,4 @@ async function InsertPokemonType() {
 }
 
 //InsertPokemon();
-InsertPokemonType();
-
-//Vileplume,Nidorino
+//InsertPokemonType();
