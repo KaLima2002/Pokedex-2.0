@@ -142,6 +142,19 @@ function CreateModalStyle(Type1,IconColor1, Type2,IconColor2){
 
 
 window.onload = async () => {
+    var coll = document.getElementsByClassName("Filter");
+    var i;
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } 
+    });
+    };
     allPokemons = (await GetAllPokemons()).response;
     const AmountPokemons = Object.keys(allPokemons).length;
     for(var i = 0; i < AmountPokemons; i++){
